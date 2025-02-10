@@ -76,7 +76,7 @@ const LeafletView: React.FC<LeafletViewProps> = ({
   mapCenterPosition,
   ownPositionMarker,
   zoom = DEFAULT_ZOOM,
-  doDebug,
+  doDebug = __DEV__,
   androidHardwareAccelerationDisabled,
 }) => {
   const webViewRef = useRef<WebView>(null);
@@ -236,12 +236,6 @@ const LeafletView: React.FC<LeafletViewProps> = ({
   );
 };
 
-LeafletView.defaultProps = {
-  renderLoading: () => <LoadingIndicator />,
-  mapLayers: DEFAULT_MAP_LAYERS,
-  zoom: DEFAULT_ZOOM,
-  doDebug: __DEV__,
-};
 
 const styles = StyleSheet.create({
   container: {
