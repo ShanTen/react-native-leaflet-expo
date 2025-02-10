@@ -65,17 +65,17 @@ export type LeafletViewProps = {
 };
 
 const LeafletView: React.FC<LeafletViewProps> = ({
-  renderLoading,
+  renderLoading = (() => <LoadingIndicator />),
   onError,
   onLoadEnd,
   onLoadStart,
   onMessageReceived,
-  mapLayers,
+  mapLayers = DEFAULT_MAP_LAYERS,
   mapMarkers,
   mapShapes,
   mapCenterPosition,
   ownPositionMarker,
-  zoom,
+  zoom = DEFAULT_ZOOM,
   doDebug,
   androidHardwareAccelerationDisabled,
 }) => {
